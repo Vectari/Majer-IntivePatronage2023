@@ -7,9 +7,34 @@ body {
     background-position: center;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
+    max-width: 1300px;
+    margin: auto;
 }
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    background-color: aqua;
+    padding: 10px 10px; 
+    border-radius: 0 0 15px 15px;
 }
+
+.login-btn {
+    background-color: coral;
+    font-size: 18px;
+    padding: 6px;
+    margin-right: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.reg-btn {
+    background-color: coral;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}
+
