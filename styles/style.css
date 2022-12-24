@@ -1,7 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
     background-image: url(../images/piggy-bank.jpg);
@@ -9,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+    font-family: 'Open Sans', sans-serif;
 }
 
 nav {
