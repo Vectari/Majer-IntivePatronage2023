@@ -67,3 +67,13 @@ nav {
         font-size: 35px;
     }
 }
+
+/* ----- LOGIN SECTION ----- */
+
+#login-container {
+    max-height: 100vh;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
