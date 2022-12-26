@@ -40,6 +40,15 @@ nav {
     color: black;
 }
 
+.logout-btn {
+    background-color: coral;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}
+
 /* ----- INDEX PARAGRAF -----  */
 
 #index-container {
@@ -70,10 +79,6 @@ nav {
 
 /* ----- LOGIN SECTION ----- */
 
-#login-container {
-    max-height: 100vh;
-    max-width: 800px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-}
+
+
+/* ----- REGISTRATION SECTION ----- */
