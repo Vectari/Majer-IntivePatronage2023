@@ -12,7 +12,7 @@
     <nav>
         <a class="reg-btn" href="./registration.html">Rejestracja</a>
     </nav>
-    <form id="login-container" action="./main.html">
+    <form id="login-container" action="./main.html" onsubmit="validate(event)">
         <h1>Logowanie</h1>
         <div>
             <label for="username">Nazwa użytkownika</label>
@@ -23,7 +23,7 @@
             <input type="password" name="password" id="password" minlength="6" required>
         </div>
         <div id="login-btn">
-            <button type="submit" id="login-btn" >Zaloguj</button>
+            <button type="submit" id="login-btn">Zaloguj</button>
         </div>
     </form>
 
