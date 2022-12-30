@@ -16,13 +16,13 @@ body {
 nav {
     display: flex;
     justify-content: flex-start;
-    background-color: aqua;
+    background-color: #2222229f;
     padding: 10px 10px; 
     border-radius: 0 0 15px 15px;
 }
 
 .login-btn {
-    background-color: coral;
+    background-color: #FFF083;
     font-size: 18px;
     padding: 6px;
     margin-right: 10px;
@@ -32,7 +32,7 @@ nav {
 }
 
 .reg-btn {
-    background-color: coral;
+    background-color: #FFF083;
     font-size: 18px;
     padding: 6px;
     border-radius: 15px;
@@ -41,12 +41,18 @@ nav {
 }
 
 .logout-btn {
-    background-color: coral;
+    background-color: #FFF083;
     font-size: 18px;
     padding: 6px;
     border-radius: 15px;
     text-decoration: none;
     color: black;
+}
+
+.login-btn:hover,
+.logout-btn:hover,
+.reg-btn:hover {
+    background-color: #fff183bb;
 }
 
 /* ----- INDEX PARAGRAF -----  */
@@ -66,14 +72,26 @@ nav {
     grid-row-end: 3;
     font-size: 23px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.219);
+    background-image: linear-gradient(#2222221f, #fff18362);
     border-radius: 15px;
+}
+
+.info-span {
+    color: #222222f1;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.info-span:hover {
+    background-color: #fff183d2;
 }
 
 @media only screen and (min-width: 768px){
     
     #index-info {
-        font-size: 35px;
+        font-size: 33px;
     }
 }
 
@@ -82,3 +100,44 @@ nav {
 
 
 /* ----- REGISTRATION SECTION ----- */
+
+#reg-container {
+    max-height: 100vh;
+    max-width: 1300x;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#reg-form {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 23px;
+    text-align: center;
+    background-image: linear-gradient(#2222221f, #fff18362);
+    border-radius: 15px;
+}
+
+#test {
+
+}
+
+.reg-label {
+
+}
+
+.reg-input  {
+
+}
+
+.reg-button {
+    background-color: #FFF083;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+}

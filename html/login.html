@@ -13,10 +13,10 @@
         <a class="reg-btn" href="./registration.html">Rejestracja</a>
     </nav>
     <form id="login-container" action="./main.html" onsubmit="validate(event)">
-        <h1>Logowanie</h1>
+        <h2>Logowanie</h2>
         <div>
-            <label for="username">Nazwa użytkownika</label>
-            <input type="text" name="username" id="username" minlength="6" maxlength="16" required>
+            <label for="usernameoremail">Nazwa użytkownika / Email</label>
+            <input type="text" type="email" name="usernameoremail" id="usernameoremail" minlength="6" maxlength="16" required>
         </div>
         <div>
             <label for="password">Hasło</label>
@@ -30,3 +30,4 @@
     <script src="../scripts/login-script.js"></script>    
 </body>
 </html>
+

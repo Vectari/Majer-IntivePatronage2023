@@ -2,34 +2,19 @@
 document.getElementById('username').textContent += `Dzień dobry, ${sessionStorage.getItem('username')}!`;
 
 
-// const url = "https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be";
-// fetch(url, {
-//     method: "GET",
-//     headers: {
-//          "X-Access-Key": "$2b$10$5pBRUbFRKdKft/b8qSQ3IeyPQgQ8CLXlvgoQA6GdpYvdWva.pOfGS",
-//     }
-// })
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(json => {
-//         console.log(json);
-//     })
-
-
-    let req = new XMLHttpRequest();
-
-    req.onreadystatechange = () => {
-      if (req.readyState == XMLHttpRequest.DONE) {
-        console.log(req.responseText);
-      }
-    };
-    
-    req.open("GET", "https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be", true);
-    req.setRequestHeader("X-Master-Key", "<YOUR_API_KEY>");
-    req.send();
-
-
+const url = "https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be";
+fetch(url, {
+    method: "GET",
+    headers: {
+         "X-Access-Key": "$2b$10$5pBRUbFRKdKft/b8qSQ3IeyPQgQ8CLXlvgoQA6GdpYvdWva.pOfGS",
+    }
+})
+    .then(response => {
+        return response.json();
+    })
+    .then(json => {
+        console.log(json);
+    })
 
 
 // fetch('https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be', {
