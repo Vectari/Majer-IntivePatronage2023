@@ -11,7 +11,7 @@ function validate(e){
 
     if (((x) || (y)) && (z)) {
         alert ("Login successfully");
-        // window.location.href = "main.html";
+        window.location.href = "main.html";
     } else if ((!y) && ((z) || (!z))) {
         alert ("Brak tego maila");
     } else if (emailcheck == false) {

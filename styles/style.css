@@ -100,7 +100,75 @@ nav {
 }
 
 /* ----- LOGIN SECTION ----- */
+/* CONTAINER */
 
+#login-container{
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+/* TITLE */
+
+#login-title {
+    color: #FFFFFF; 
+    text-align: center;
+}
+
+/* FORM: LABEL AND INPUT */
+
+#login-form {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-radius: 15px;
+    background-image: linear-gradient(#22222271, #ff620067);
+    font-size: 23px;
+}
+
+.login-label-input-div {
+    text-align: center;
+}
+
+.login-label {
+    display: block;
+}
+
+.login-input {
+    
+}
+
+@media only screen and (min-width: 675px){
+    
+    .login-label {
+        display: inline-block;
+    }
+    
+}
+
+/* LOGIN BUTTON */
+
+#login-btn {
+    text-align: center;
+}
+
+.login-button {
+    background-color: #AFDFF9;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #222222;
+    margin: 15px 0 10px 0;
+}
+
+.login-button:hover {
+    box-shadow: 2px 2px 10px #AFDFF9;
+}
 
 
 /* ----- REGISTRATION SECTION ----- */
@@ -115,7 +183,7 @@ nav {
 
 /* TITLE */
 
-h2 {
+#title-reg {
     color: #FFFFFF; 
     text-align: center;
 }
@@ -132,20 +200,21 @@ h2 {
     font-size: 23px;
 }
 
-#one {
+.reg-label-input-div {
     text-align: center;
 }
-#two {
+
+.reg-label {
     display: block;
 }
 
-#three {
+.reg-input {
     
 }
 
 @media only screen and (min-width: 570px){
     
-    #two {
+    .reg-label {
         display: inline-block;
     }
     
