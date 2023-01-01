@@ -241,3 +241,13 @@ nav {
 .reg-button:hover {
     box-shadow: 2px 2px 10px #AFDFF9;
 }
+
+/* ----- MAIN SECTION ----- */
+/* User welcome */
+
+#username {
+    font-size: 18px;
+    color:#FFFFFF;
+    margin-right: 10px;
+    padding-top: 6px;
+}

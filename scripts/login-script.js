@@ -3,26 +3,32 @@ function validate(e){
     let usernameoremail = document.getElementById('usernameoremail');
     let password = document.getElementById('password');
 
-    let x = usernameoremail.value === sessionStorage.getItem('username');
+    let x = usernameoremail.value === sessionStorage.getItem('username');   //shorter form of checking user input exists in sessionstorage
     let y = usernameoremail.value === sessionStorage.getItem('email');
     let z = password.value === sessionStorage.getItem('password');
 
-    let emailcheck = (sessionStorage.getItem('email')).split('').every(element => element === '@');
+    let emailcheck = (usernameoremail.value).split('').find(element => element === '@');
 
     if (((x) || (y)) && (z)) {
-        alert ("Login successfully");
         window.location.href = "main.html";
-    } else if ((!y) && ((z) || (!z))) {
-        alert ("Brak tego maila");
-    } else if (emailcheck == false) {
-        alert ("login error");
-    } else  if (((!x) || (!y)) || (!z)) {
-        alert ("login error");
+        console.log("login lub mail i hasło OK");
+    } else if (((!y) && (emailcheck === '@')) && ((z) || (!z))) {
+        console.log("mail wolny");
+    } else if (((!x) && (!y)) && (!z)) {
+        console.log("zla nazwa uzytkownika i haslo");
+    } else if (((x) || (y)) && (!z)) {
+        console.log("złe hasło")
     } else {
-        alert ("login error");
-    };
-    
+        console.log("error");
+    }
+
     console.log(emailcheck);
+
+
+    // TESTOWANE JUZ ZROBIONE, TERAZ TRZEBA DODAC TRESC BLEDOW DO STRONY
+
+
+
 };
 
 
