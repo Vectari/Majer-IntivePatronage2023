@@ -87,10 +87,10 @@ nav {
     border-radius: 15px;
 }
 
-.info-span:hover {
+/* .info-span:hover {
     background-color:#000066;
     box-shadow: 1px 1px 10px #000066;
-}
+} */
 
 @media only screen and (min-width: 768px){
     
@@ -114,6 +114,30 @@ nav {
 #login-title {
     color: #FFFFFF; 
     text-align: center;
+}
+
+/* LOGIN STATUS */
+
+#login-status {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 27px;
+    background-color: #22222225;
+}
+
+.login-status-ok {
+    color:#99FF00;
+    font-weight: bold;
+}
+
+.login-status-not-ok {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.free-mail {
+    color:#99FF00;
+    text-decoration: none;
 }
 
 /* FORM: LABEL AND INPUT */
@@ -245,7 +269,7 @@ nav {
 /* ----- MAIN SECTION ----- */
 /* User welcome */
 
-#username {
+#username-welcome {
     font-size: 18px;
     color:#FFFFFF;
     margin-right: 10px;

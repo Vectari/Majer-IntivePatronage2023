@@ -1,5 +1,5 @@
 // Display username near "LOGOUT" button on the right side of navbar
-document.getElementById('username').textContent += `Dzień dobry, ${sessionStorage.getItem('username')}!`;
+document.getElementById('username-welcome').textContent += `Dzień dobry, ${sessionStorage.getItem('username')}!`;
 
 
 const url = "https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be";

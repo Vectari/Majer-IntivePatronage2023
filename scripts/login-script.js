@@ -9,25 +9,27 @@ function validate(e){
 
     let emailcheck = (usernameoremail.value).split('').find(element => element === '@');
 
+    const loginstatus = document.getElementById("login-status");
+
     if (((x) || (y)) && (z)) {
         window.location.href = "main.html";
+        loginstatus.innerHTML = `<div id=login-status class="login-status-ok">Logowanie...</div>`;
         console.log("login lub mail i hasło OK");
     } else if (((!y) && (emailcheck === '@')) && ((z) || (!z))) {
+        loginstatus.innerHTML = `<div id=login-status class="login-status-ok">Adres Email wolny, <a href="./registration.html" class="free-mail">ZAREJESTRUJ SIĘ!</a></div>`;
         console.log("mail wolny");
     } else if (((!x) && (!y)) && (!z)) {
+        loginstatus.innerHTML = `<div id=login-status class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
         console.log("zla nazwa uzytkownika i haslo");
     } else if (((x) || (y)) && (!z)) {
+        loginstatus.innerHTML = `<div id=login-status class="login-status-not-ok">Złe hasło.</div>`;
         console.log("złe hasło")
     } else {
+        loginstatus.innerHTML = `<div id=login-status class="login-status-not-ok">Błąd logowania. Wprowadź inne dane.</div>`;
         console.log("error");
     }
 
     console.log(emailcheck);
-
-
-    // TESTOWANE JUZ ZROBIONE, TERAZ TRZEBA DODAC TRESC BLEDOW DO STRONY
-
-
 
 };
 
