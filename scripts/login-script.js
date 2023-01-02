@@ -1,35 +1,41 @@
 function validate(e){
     e.preventDefault(); // with preventDefault user can only login with existing username and password
-    let usernameoremail = document.getElementById('usernameoremail');
-    let password = document.getElementById('password');
+    let userNameOrEmail = document.getElementById('usernameoremail');  //add user's input value to variable
+    let password = document.getElementById('password');  //add user's input value to variable
 
-    let x = usernameoremail.value === sessionStorage.getItem('username');   //shorter form of checking user input exists in sessionstorage
-    let y = usernameoremail.value === sessionStorage.getItem('email');
-    let z = password.value === sessionStorage.getItem('password');
+    let x = userNameOrEmail.value === sessionStorage.getItem('username');   //shorter form of checking user input exists in sessionstorage
+    let y = userNameOrEmail.value === sessionStorage.getItem('email');   //shorter form of checking user input exists in sessionstorage
+    let z = password.value === sessionStorage.getItem('password');   //shorter form of checking user input exists in sessionstorage
 
-    let emailcheck = (usernameoremail.value).split('').find(element => element === '@');
+    let emailCheck = (userNameOrEmail.value).split('').find(element => element === '@');  // check if input is email - essential to propose registration if email not exist
 
-    const loginstatus = document.getElementById("login-status");
+    let loginStatus = document.getElementById("login-status");
 
     if (((x) || (y)) && (z)) {
         window.location.href = "main.html";
-        loginstatus.innerHTML = `<div id=login-status class="login-status-ok">Logowanie...</div>`;
+        loginStatus.innerHTML = `<div id=login-status class="login-status-ok">Logowanie...</div>`;
         console.log("login lub mail i hasło OK");
-    } else if (((!y) && (emailcheck === '@')) && ((z) || (!z))) {
-        loginstatus.innerHTML = `<div id=login-status class="login-status-ok">Adres Email wolny, <a href="./registration.html" class="free-mail">ZAREJESTRUJ SIĘ!</a></div>`;
+    } else if (((!y) && (emailCheck === '@')) && ((z) || (!z))) {
+        loginStatus.innerHTML = `<div id=login-status class="login-status-ok">Adres Email wolny, <a href="./registration.html" class="free-mail">ZAREJESTRUJ SIĘ!</a></div>`;
         console.log("mail wolny");
     } else if (((!x) && (!y)) && (!z)) {
-        loginstatus.innerHTML = `<div id=login-status class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
+        loginStatus.innerHTML = `<div id=login-status class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
+        document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any erraor with this input
+        document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
         console.log("zla nazwa uzytkownika i haslo");
     } else if (((x) || (y)) && (!z)) {
-        loginstatus.innerHTML = `<div id=login-status class="login-status-not-ok">Złe hasło.</div>`;
+        loginStatus.innerHTML = `<div id=login-status class="login-status-not-ok">Złe hasło.</div>`;
+        document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+        document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
         console.log("złe hasło")
     } else {
-        loginstatus.innerHTML = `<div id=login-status class="login-status-not-ok">Błąd logowania. Wprowadź inne dane.</div>`;
+        loginStatus.innerHTML = `<div id=login-status class="login-status-not-ok">Błąd logowania. Wprowadź inne dane.</div>`;
+        document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+        document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
         console.log("error");
     }
 
-    console.log(emailcheck);
+    console.log(emailCheck);
 
 };
 

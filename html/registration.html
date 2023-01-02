@@ -14,10 +14,11 @@
     </nav>
     <div id="reg-container">
         <form id="reg-form" action="./main.html">
-                <h2 id="title-reg">Rejestracja</h2>
+            <h2 id="title-reg">Rejestracja</h2>
+            <div id="reg-status">REG STATUS</div>
             <div class="reg-label-input-div">
                 <label for="username" class="reg-label">Nazwa użytkownika</label>
-                <input type="text" name="username" class="reg-input" id="username" minlength="6" maxlength="16" required>
+                <input type="text" name="username" class="reg-input" id="username" minlength="6" maxlength="16" pattern="[a-zA-Z0-9-]+" required>
             </div>
             <div class="reg-label-input-div">
                 <label for="password" class="reg-label">Hasło</label>
@@ -25,7 +26,7 @@
             </div>
             <div class="reg-label-input-div">
                 <label for="email" class="reg-label">Email</label>
-                <input type="email" name="email" class="reg-input" id="email" required>
+                <input type="email" name="email" class="reg-input" id="email" pattern=".+@gmail.com" required>
             </div>
             <div class="reg-label-input-div">
                 <label for="confirm-email" class="reg-label">Potwierdź email</label>

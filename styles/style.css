@@ -161,7 +161,7 @@ nav {
 }
 
 .login-input {
-    
+
 }
 
 @media only screen and (min-width: 675px){
@@ -211,6 +211,26 @@ nav {
     color: #FFFFFF; 
     text-align: center;
 }
+
+/* REGISTRATION STATUS */
+
+#reg-status {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 27px;
+    background-color: #22222225;
+}
+
+.reg-status-ok {
+    color:#99FF00;
+    font-weight: bold;
+}
+
+.reg-status-not-ok {
+    color: #FF0000;
+    font-weight: bold;
+}
+
 
 /* FORM: LABEL AND INPUT */
 
