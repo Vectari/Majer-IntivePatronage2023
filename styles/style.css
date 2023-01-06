@@ -15,10 +15,14 @@ body {
 
 nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content:space-between;
     background-color: #222222cc;
     padding: 10px 10px; 
     border-radius: 0 0 15px 15px;
+}
+
+.button-section {
+    margin-top: 6px;
 }
 
 .login-btn {
@@ -58,14 +62,13 @@ nav {
 }
 
 #language-section{
-    
+    justify-items: right;
 }
 
 .language-icon {
     width: 31px;
     margin: 0px 6px 0px 6px;
     cursor: pointer;
-    justify-content: flex-end;
 }
 
 /* ----- INDEX PARAGRAF -----  */

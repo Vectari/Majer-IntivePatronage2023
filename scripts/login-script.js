@@ -41,7 +41,7 @@ function validate(e){
     let loginStatus = document.getElementById("login-status");
 
     if (((x) || (y)) && (z)) {
-        // window.location.href = "main.html";
+        window.location.href = "main.html";
         if ((sessionStorage.getItem('language')) === "1") {
             loginStatus.innerHTML = `<div class="login-status-ok">Logging In...</div>`;   //change language for non-static element
         } else {
