@@ -1,37 +1,45 @@
 // Display username near "LOGOUT" button on the right side of navbar
 document.getElementById('username-welcome').textContent += `Dzień dobry, ${sessionStorage.getItem('username')}!`;
 
+// Fetch API from URL
+const API_URL = "https://api.npoint.io/38edf0c5f3eb9ac768bd";
 
-const url = "https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be";
-fetch(url, {
-    method: "GET",
-    headers: {
-         "X-Access-Key": "$2b$10$5pBRUbFRKdKft/b8qSQ3IeyPQgQ8CLXlvgoQA6GdpYvdWva.pOfGS",
-    }
-})
-    .then(response => {
-        return response.json();
-    })
-    .then(json => {
-        console.log(json);
-    })
+let transaction;
+let transactionType;
+
+fetch(API_URL)
+    .then((res) => res.json())
+    // .then((res) => console.log(res.transactions))
+    .then((transactionList) => {
+        transaction = transactionList.transactions.map((transactions) => {
+            return {
+                date: transactions.date,
+                type: transactions.type,
+                description: transactions.description,
+                amount: transactions.amount,
+                balance: transactions.balance,
+            };
+        });
+        console.log(transaction);
+
+        document.getElementById('date').textContent += `${transaction[0].date}`;
+        document.getElementById('type').textContent += `${transaction[0].type}`;
+        document.getElementById('description').textContent += `${transaction[0].description}`;
+        document.getElementById('amount').textContent += `${transaction[0].amount}`;
+        document.getElementById('balance').textContent += `${transaction[0].balance}`;
+
+    });
 
 
-// fetch('https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be', {
-//     method: 'GET',
-//     headers: {
-//         'x-access-key': '$2b$10$5pBRUbFRKdKft/b8qSQ3IeyPQgQ8CLXlvgoQA6GdpYvdWva.pOfGS',
-//         'Content-Type': 'application/json'
-//     },
-    
 
-// })  .then((response) => response.json())
-//     .then((json) => console.log(json))
-
-
-
-//     Dane potrzebne do wyświetlenia widoku aplikacja pobiera przy użyciu fetch API
-// ▪ GET z URL https://api.jsonbin.io/v3/b/63a092ab15ab31599e2045be
-// ▪ nagłówek autoryzacyjny x-access-key o wartości: 
-// $2b$10$5pBRUbFRKdKft/b8qSQ3IeyPQgQ8CLXlvgoQA6GdpYvdWva.pOfGS
-// ▪ odpowiedź zawiera „transactions” oraz „transactionTypes”
+    // .then((transactionTypeList) => {
+    //     transactionType = transactionTypeList.transacationTypes.map((transacationTypes) => {
+    //         return {
+    //             1: transacationTypes[1],
+    //             2: transacationTypes[2],
+    //             3: transacationTypes[3],
+    //             4: transacationTypes[4],
+    //         };
+    //     });
+    //     console.log(transactionType);
+    // });
