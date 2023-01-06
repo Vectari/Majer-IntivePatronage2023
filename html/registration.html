@@ -10,29 +10,33 @@
 </head>
 <body>
     <nav>
-        <a class="login-btn" href="./login.html">Logowanie</a>
+        <a class="login-btn" href="./login.html" id="login" >Logowanie</a>
+        <div id="language-section">
+            <a onclick="languagePL(event)"><img src="../images/PL_icon.png" class="language-icon" alt="polish language icon"></a>
+            <a onclick="languageENG(event)"><img src="../images/ENG_icon.png" class="language-icon" alt="english language icon"></a>
+        </div>
     </nav>
     <div id="reg-container">
         <form id="reg-form" action="./main.html">
             <h2 id="title-reg">Rejestracja</h2>
             <div id="reg-status">REG STATUS</div>
             <div class="reg-label-input-div">
-                <label for="username" class="reg-label">Nazwa użytkownika</label>
+                <label for="username" class="reg-label" id="username-title">Nazwa użytkownika</label>
                 <input type="text" name="username" class="reg-input" id="username" minlength="6" maxlength="16" pattern="[a-zA-Z0-9-]+" required>
             </div>
             <div class="reg-label-input-div">
-                <label for="password" class="reg-label">Hasło</label>
+                <label for="password" class="reg-label" id="password-title">Hasło</label>
                 <input type="password" name="password" class="reg-input" id="password" minlength="6" required>
             </div>
             <div class="reg-label-input-div">
-                <label for="email" class="reg-label">Email</label>
+                <label for="email" class="reg-label" id="email-title">Email</label>
                 <input type="email" name="email" class="reg-input" id="email" pattern=".+@gmail.com" required>
             </div>
             <div class="reg-label-input-div">
-                <label for="confirm-email" class="reg-label">Potwierdź email</label>
+                <label for="confirm-email" class="reg-label" id="confirm-email-title">Potwierdź email</label>
                 <input type="email" name="confirm-email" class="reg-input" id="confirm-email" required>
             </div>
-            <div id="reg-btn">
+            <div id="reg-btn-section">
                 <button type="submit" class="reg-button" id="reg-btn" >Zarejestruj</button>
             </div>
         </form>
