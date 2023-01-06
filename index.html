@@ -10,10 +10,14 @@
 </head>
 <body>
     <nav>
-        <a class="login-btn" href="./html/login.html">Logowanie</a>
-        <a class="reg-btn" href="./html/registration.html">Rejestracja</a>
-        <button onclick="languagePL(event)">PL</button>
-        <button onclick="languageENG(event)">ENG</button>
+        <!-- <div> -->
+            <a class="login-btn" href="./html/login.html" id="login">Logowanie</a>
+            <a class="reg-btn" href="./html/registration.html" id="registration">Rejestracja</a>
+        <!-- </div> -->
+        <div id="language-section">
+            <a onclick="languagePL(event)"><img src="./images/PL_icon.png" class="language-icon" alt="polish language icon"></a>
+            <a onclick="languageENG(event)"><img src="./images/ENG_icon.png" class="language-icon" alt="english language icon"></a>
+        </div>
     </nav>
     <div id="index-container">
         <p id="index-info">Dzień dobry!<br><a href="./html/login.html" class="info-span"><span>Zaloguj się</span></a> i miej swoje pieniądze pod kontrolą, a jeśli jeszcze nie posiadasz u nas konta, <br><a href="./html/registration.html" class="info-span"><span>zarejestruj się</span></a> i dołącz do grona ludzi którzy wiedzą jak zadbać o swoje finanse.</p>
@@ -23,3 +27,4 @@
     <script src="./scripts/index.js"></script>
 </body>
 </html>
+

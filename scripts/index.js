@@ -1,4 +1,6 @@
 // LANGUAGE CHANGE
+let loginButton = document.getElementById("login");
+let registrationButton = document.getElementById("registration");
 let indexInfo = document.getElementById("index-info");
 
 function languageENG(e) {
@@ -12,5 +14,8 @@ function languagePL(e) {
 }
 
 if ((sessionStorage.getItem('language')) === "1") {
-    indexInfo.innerHTML = `Hello!<br><a href="./html/login.html" class="info-span"><span>Log in</span></a> and keep your money under control, and if you don't already have an account, <br><a href="./html/registration.html" class="info-span"><span>register</span></a> and join the group of people who know how to take care of their finances.`;
+    indexInfo.innerHTML = `Hello!<br><a href="./html/login.html" class="info-span"><span>Log In</span></a> and keep your money under control, and if you don't already have an account, <br><a href="./html/registration.html" class="info-span"><span>register</span></a> and join the group of people who know how to take care of their finances.`;
+
+    loginButton.innerHTML = `Log In`;
+    registrationButton.innerHTML = `Register`;
 }

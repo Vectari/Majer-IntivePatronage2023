@@ -10,21 +10,25 @@
 </head>
 <body>
     <nav>
-        <a class="reg-btn" href="./registration.html">Rejestracja</a>
+        <a class="reg-btn" href="./registration.html" id="registration">Rejestracja</a>
+        <div id="language-section">
+            <a onclick="languagePL(event)"><img src="../images/PL_icon.png" class="language-icon" alt="polish language icon"></a>
+            <a onclick="languageENG(event)"><img src="../images/ENG_icon.png" class="language-icon" alt="english language icon"></a>
+        </div>
     </nav>
     <div id="login-container">
         <form id="login-form" action="./main.html" onsubmit="validate(event)">
             <h2 id="login-title">Logowanie</h2>
             <div id="login-status"></div>
             <div class="login-label-input-div">
-                <label for="usernameoremail" class="login-label">Nazwa użytkownika / Email</label>
+                <label for="usernameoremail" class="login-label" id="username-title">Nazwa użytkownika / Email</label>
                 <input type="text" type="email" class="login-input" name="usernameoremail" id="usernameoremail" minlength="6" maxlength="16" required>
             </div>
             <div class="login-label-input-div">
-                <label for="password" class="login-label">Hasło</label>
+                <label for="password" class="login-label" id="password-title">Hasło</label>
                 <input type="password" name="password" class="login-input" id="password" minlength="6" required>
             </div>
-            <div id="login-btn">
+            <div id="login-btn-section">
                 <button type="submit" class="login-button" id="login-btn">Zaloguj</button>
             </div>
         </form>

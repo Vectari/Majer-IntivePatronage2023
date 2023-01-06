@@ -57,6 +57,17 @@ nav {
     box-shadow: 1px 1px 10px #FF6200;
 }
 
+#language-section{
+    
+}
+
+.language-icon {
+    width: 31px;
+    margin: 0px 6px 0px 6px;
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
 /* ----- INDEX PARAGRAF -----  */
 
 #index-container {
@@ -87,10 +98,10 @@ nav {
     border-radius: 15px;
 }
 
-/* .info-span:hover {
+.info-span:hover {
     background-color:#000066;
     box-shadow: 1px 1px 10px #000066;
-} */
+}
 
 @media only screen and (min-width: 768px){
     
@@ -174,7 +185,7 @@ nav {
 
 /* LOGIN BUTTON */
 
-#login-btn {
+#login-btn-section {
     text-align: center;
 }
 

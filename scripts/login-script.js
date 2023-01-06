@@ -1,3 +1,32 @@
+// LANGUAGE CHANGE
+let registrationButton = document.getElementById("registration");
+let loginTitle = document.getElementById("login-title");
+let usernameTitle = document.getElementById("username-title");
+let passwordTitle = document.getElementById("password-title");
+let loginButtonTitle = document.getElementById("login-btn");
+
+
+function languageENG(e) {
+    sessionStorage.setItem('language', '1');
+    window.location.reload();
+}
+
+function languagePL(e) {
+    sessionStorage.setItem('language', '0');
+    window.location.reload();
+}
+
+if ((sessionStorage.getItem('language')) === "1") {
+    //change language for static element
+    registrationButton.innerHTML = `Register`;
+    loginTitle.innerHTML = `Log In`;
+    usernameTitle.innerHTML = `Username / Email`;
+    passwordTitle.innerHTML = `Password`;
+    loginButtonTitle.innerHTML = `Log In`;
+}
+
+
+//VALIDATE FUNCTION
 function validate(e){
     e.preventDefault(); // with preventDefault user can only login with existing username and password
     let userNameOrEmail = document.getElementById('usernameoremail');  //add user's input value to variable
@@ -12,36 +41,49 @@ function validate(e){
     let loginStatus = document.getElementById("login-status");
 
     if (((x) || (y)) && (z)) {
-        window.location.href = "main.html";
-        loginStatus.innerHTML = `<div id=login-status class="login-status-ok">Logowanie...</div>`;
-        console.log("login lub mail i hasło OK");
+        // window.location.href = "main.html";
+        if ((sessionStorage.getItem('language')) === "1") {
+            loginStatus.innerHTML = `<div class="login-status-ok">Logging In...</div>`;   //change language for non-static element
+        } else {
+            loginStatus.innerHTML = `<div class="login-status-ok">Logowanie...</div>`;
+        }
     } else if (((!y) && (emailCheck === '@')) && ((z) || (!z))) {
-        loginStatus.innerHTML = `<div id=login-status class="login-status-ok">Adres Email wolny, <a href="./registration.html" class="free-mail">ZAREJESTRUJ SIĘ!</a></div>`;
-        console.log("mail wolny");
+        if ((sessionStorage.getItem('language')) === "1") {
+            loginStatus.innerHTML = `<div class="login-status-ok">Email address available, <a href="./registration.html" class="free-mail"><br>REGISTER!</a></div>`;   //change language for non-static element
+        } else {
+            loginStatus.innerHTML = `<div class="login-status-ok">Adres Email wolny, <a href="./registration.html" class="free-mail"><br>ZAREJESTRUJ SIĘ!</a></div>`;
+        }
     } else if (((!x) && (!y)) && (!z)) {
-        loginStatus.innerHTML = `<div id=login-status class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
-        document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any erraor with this input
-        document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
-        console.log("zla nazwa uzytkownika i haslo");
+        if ((sessionStorage.getItem('language')) === "1") {
+            loginStatus.innerHTML = `<div class="login-status-not-ok">Wrong username and password.</div>`;   //change language for non-static element
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any erraor with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+        } else {
+            loginStatus.innerHTML = `<div class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any erraor with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+        }
     } else if (((x) || (y)) && (!z)) {
-        loginStatus.innerHTML = `<div id=login-status class="login-status-not-ok">Złe hasło.</div>`;
-        document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
-        document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
-        console.log("złe hasło")
+        if ((sessionStorage.getItem('language')) === "1") {
+            loginStatus.innerHTML = `<div class="login-status-not-ok">Wrong password.</div>`;   //change language for non-static element
+            document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+        } else {
+            loginStatus.innerHTML = `<div class="login-status-not-ok">Złe hasło.</div>`;
+            document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+        }
     } else {
-        loginStatus.innerHTML = `<div id=login-status class="login-status-not-ok">Błąd logowania. Wprowadź inne dane.</div>`;
-        document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
-        document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
-        console.log("error");
+        if ((sessionStorage.getItem('language')) === "1") {
+            loginStatus.innerHTML = `<div class="login-status-not-ok">Login error. Enter other details.</div>`;   //change language for non-static element
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            console.log("error");
+        } else {
+            loginStatus.innerHTML = `<div class="login-status-not-ok">Błąd logowania. Wprowadź inne dane.</div>`;
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            console.log("error");
+        }
     }
-
-    console.log(emailCheck);
-
 };
-
-
-// mała korekta ze względu na nieścisłość wymagań ogólnych dla sekcji Logowanie. Podpunkt 3 otrzymuje brzmienie:
-// Formularz logowania składający się z pól „Nazwa użytkownika / Email” i „Hasło” oraz przycisku „Zaloguj”
-// Oznacza to, że zalogować można się nazwą użytkownika lub emailem.
-// Ma to związek z wymaganiem szczegółowym dla sekcji Logowanie o brzmieniu (bez zmian):
-// Jeśli podany adres e-mail jest wolny, zachęć użytkownika do założenia konta
