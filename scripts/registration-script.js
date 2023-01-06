@@ -17,5 +17,7 @@ regBtn.addEventListener('click', (e) => {
     };
 });
 
+
+
 // dałem tylko nagłówk reg status i STYLE W CSS PRZYGOTOWANE. teraz trzeba dodać wszystkie ify validacji i dodać teksty w miejsce reg status
 
