@@ -9,7 +9,7 @@ let transactionType;
 
 fetch(API_URL)
     .then((res) => res.json())
-    // .then((res) => console.log(res.transactions))
+    // .then((res) => console.log(res))
     .then((transactionList) => {
         transaction = transactionList.transactions.map((transactions) => {
             return {
@@ -27,7 +27,6 @@ fetch(API_URL)
         document.getElementById('description').textContent += `${transaction[0].description}`;
         document.getElementById('amount').textContent += `${transaction[0].amount}`;
         document.getElementById('balance').textContent += `${transaction[0].balance}`;
-
     });
 
 
