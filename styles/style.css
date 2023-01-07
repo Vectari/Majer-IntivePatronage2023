@@ -309,3 +309,9 @@ nav {
     margin-right: 10px;
     padding-top: 6px;
 }
+
+/* Charts */
+
+#chart-container {
+    display: flex;
+}
