@@ -8,26 +8,25 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="updateChart()">
     <nav style="justify-content: flex-end;">
         <div id="username-welcome"></div>
         <a class="logout-btn" href="./login.html">Wyloguj</a>
     </nav>
-    <h1>MAIN</h1>
-    <h3 id="date"></h3>
-    <h3 id="type"></h3>
-    <h3 id="description"></h3>
-    <h3 id="amount"></h3>
-    <h3 id="balance"></h3>
-
     <div id="chart-container">
         <div style="height:300px; width:300px">
-            <canvas id="transactionChartDoughnut"></canvas>
+            <canvas id="transactionChartPie"></canvas>
         </div>
         <div style="height:300px; width:600px">
             <canvas id="transactionChartBar"></canvas>
         </div>
     </div>
+   
+    <h3 id="date"></h3>
+    <h3 id="type"></h3>
+    <h3 id="description"></h3>
+    <h3 id="amount"></h3>
+    <h3 id="balance"></h3>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../scripts/main-script.js"></script>    

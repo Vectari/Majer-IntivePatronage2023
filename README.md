@@ -14,17 +14,20 @@
     "description":"PayU Spółka Akcyjna"
     },{
     "date":"2022-11-12",
-    "type":3,"amount":2137.69,
+    "type":3,
+    "amount":2137.69,
     "balance":2420.47,
     "description":"Wynagrodzenie z tytułu Umowy o Pracę"
     },{
     "date":"2022-11-10",
-    "type":2,"amount":-136,
+    "type":2,
+    "amount":-136,
     "balance":2555.55,
     "description":"Lidl"
     },{
     "date":"2022-11-10",
-    "type":1,"amount":25,
+    "type":1,
+    "amount":25,
     "balance":2847.66,
     "description":"Zrzutka na prezent dla Grażyny"
     },{
