@@ -44,6 +44,7 @@
     "description":"PayU Spółka Akcyjna"
     }],
 
+
 "transacationTypes":{
     "1":"Wpływy - inne",
     "2":"Wydatki - zakupy",
