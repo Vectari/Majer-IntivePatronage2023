@@ -45,6 +45,7 @@
     }],
 
 
+
 "transacationTypes":{
     "1":"Wpływy - inne",
     "2":"Wydatki - zakupy",
