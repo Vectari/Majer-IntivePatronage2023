@@ -41,7 +41,6 @@ function updateChart() {
     const transactionTypesOutShop = datapoints.transacationTypes[2];
     const transactionTypesInPay = datapoints.transacationTypes[3];
     const transactionTypesOutOther = datapoints.transacationTypes[4];
-
     // console.log(date);
     // console.log(type);
     // console.log(description);
@@ -52,8 +51,8 @@ function updateChart() {
     // console.log(transactionTypesInPay);
     // console.log(transactionTypesOutOther);
 
-    // Count transacion types to assign right % of pie chart
 
+    // Count transacion types to assign right % of pie chart
     let inOther = 0;
     let outShop = 0;
     let inPay = 0;
@@ -75,48 +74,34 @@ function updateChart() {
     // console.log(inPay);
     // console.log(outOther);
 
+    // Count balance for each day
+    
 
 
+    // Assign labels and data to charts
     pieChart.data.labels = [datapoints.transacationTypes[1], datapoints.transacationTypes[2], datapoints.transacationTypes[3], datapoints.transacationTypes[4]];
     pieChart.data.datasets[0].data = [inOther, outShop, inPay, outOther];
     pieChart.update();
 
     barChart.data.labels = date.sort();
-    barChart.data.datasets[0].data = balance.reverse();
+    // barChart.data.datasets[0].data = balance.reverse();
+    barChart.data.datasets[0].data = [((-78.33) + (-111.11)),(( 25) + (-136)),((2137.69) + (-31.56) + (-231.56))];
+
     barChart.update();
 
+
+    // Assign data to transaction history
     document.getElementById('date').textContent += `${date}`;
     document.getElementById('type').textContent += `${type}`;
     document.getElementById('description').textContent += `${description}`;
     document.getElementById('amount').textContent += `${amount}`;
     document.getElementById('balance').textContent += `${balance}`;
+
   });
 };
 
 
-// CHART SECTION
-
-// Bar chart
-const ctxBar = document.getElementById('transactionChartBar');
-      
-const barChart = new Chart(ctxBar, {
-  type: 'bar',
-  data: {
-    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
-    datasets: [{
-      label: 'Saldo konta na koniec dnia',
-      // data: [12, 19, 3, 5, 2],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+// CHARTS SECTION
 
 // Pie chart
 const ctxPie = document.getElementById('transactionChartPie');
@@ -136,6 +121,30 @@ const pieChart = new Chart(ctxPie, {
     scales: {
       y: {
         beginAtZero: true
+      }
+    }
+  }
+});
+
+// Bar chart
+const ctxBar = document.getElementById('transactionChartBar');
+      
+const barChart = new Chart(ctxBar, {
+  type: 'bar',
+  data: {
+    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+    datasets: [{
+      label: 'Saldo konta na koniec dnia',
+      // data: [12, 19, 3, 5, 2],
+      borderWidth: 1,
+
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+        borderWidth: 20
       }
     }
   }
