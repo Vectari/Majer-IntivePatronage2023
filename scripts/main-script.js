@@ -83,19 +83,30 @@ function updateChart() {
     pieChart.data.datasets[0].data = [inOther, outShop, inPay, outOther];
     pieChart.update();
 
+
     barChart.data.labels = date.sort();
     // barChart.data.datasets[0].data = balance.reverse();
     barChart.data.datasets[0].data = [((-78.33) + (-111.11)),(( 25) + (-136)),((2137.69) + (-31.56) + (-231.56))];
-
     barChart.update();
 
 
-    // Assign data to transaction history
-    document.getElementById('date').textContent += `${date}`;
-    document.getElementById('type').textContent += `${type}`;
-    document.getElementById('description').textContent += `${description}`;
-    document.getElementById('amount').textContent += `${amount}`;
-    document.getElementById('balance').textContent += `${balance}`;
+    // Assign data to transaction history table
+    let tableData = "";
+    datapoints.transactions.map((datapoints) => { 
+  
+      // const myImage = new Image(50, 50);
+      // myImage.src = '../images/income-salar-icon.png';
+      // document.body.appendChild(myImage);
+
+      tableData += `<tr>
+                      <td class="hidden-on-mobile">${datapoints.date}</td>
+                      <td>${datapoints.type}</td>
+                      <td>${datapoints.description}<br>${datapoints.transacationTypes}</td>
+                      <td>${datapoints.amount}</td>
+                      <td class="hidden-on-mobile">${datapoints.balance}</td>
+                    </tr>`;
+    });
+    document.getElementById('table-body').innerHTML = tableData;
 
   });
 };
@@ -149,3 +160,4 @@ const barChart = new Chart(ctxBar, {
     }
   }
 });
+

@@ -315,5 +315,16 @@ nav {
 #chart-container {
     display: flex;
     justify-content: center;
-    overflow-x: scroll;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* Table */
+
+@media only screen and (max-width: 768px){
+    
+    .hidden-on-mobile {
+        display: none;
+    }
+    
 }
