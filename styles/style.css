@@ -311,23 +311,34 @@ nav {
 }
 
 /* Charts */
-
 #chart-container {
     display: flex;
-    justify-content: center;
-    overflow: auto;
-    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+#transactionChartPie {
+}
+
+#transactionChartBar {
 }
 
 /* Table */
 
 .table {
     background-color: #ffffff88;
+    margin: auto;
 }
 
 th,
 td {
-    padding: 5px 10px 5px 10px;
+    padding: 5px 30px 5px 30px;
+}
+
+@media only screen and (min-width: 605px){
+    #chart-container {
+        justify-content: center;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -335,5 +346,10 @@ td {
     .hidden-on-mobile {
         display: none;
     }
+
+    th,
+    td {
+    padding: 5px 10px 5px 10px;
+}
     
 }

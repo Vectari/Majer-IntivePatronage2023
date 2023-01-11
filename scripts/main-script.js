@@ -41,11 +41,11 @@ function updateChart() {
     const transactionTypesOutShop = datapoints.transacationTypes[2];
     const transactionTypesInPay = datapoints.transacationTypes[3];
     const transactionTypesOutOther = datapoints.transacationTypes[4];
-    // console.log(date);
+    console.log(date);
     // console.log(type);
     // console.log(description);
     // console.log(amount);
-    // console.log(balance);
+    console.log(balance);
     // console.log(transactionTypesInOther);
     // console.log(transactionTypesOutShop);
     // console.log(transactionTypesInPay);
@@ -74,8 +74,19 @@ function updateChart() {
     // console.log(inPay);
     // console.log(outOther);
 
-    // Count balance for each day
-    
+    // Count balance for END of each day
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+  
+    arr = date.filter(function (value, index, array) { 
+      return array.indexOf(value) === index;
+    });
+  
+    console.log(arr);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
     // Assign labels and data to charts
@@ -84,9 +95,8 @@ function updateChart() {
     pieChart.update();
 
 
-    barChart.data.labels = date.sort();
-    // barChart.data.datasets[0].data = balance.reverse();
-    barChart.data.datasets[0].data = [((-78.33) + (-111.11)),(( 25) + (-136)),((2137.69) + (-31.56) + (-231.56))];
+    barChart.data.labels = arr.sort();
+    barChart.data.datasets[0].data = balance.reverse();
     barChart.update();
 
 
@@ -139,10 +149,10 @@ const ctxPie = document.getElementById('transactionChartPie');
 const pieChart = new Chart(ctxPie, {
   type: 'pie',
   data: {
-    labels: ['Wpływy - inne', 'Wydatki - zakupy', 'Wpływy - wynagrodzenie', 'Wydatki - inne'],
+    labels: ['Wpływy - inne', 'Wydatki - zakupy', 'Wpływy - wynagrodzenie', 'Wydatki - inne'], //labels name is required to display label above char
     datasets: [{
       label: 'Ilość transakcji',
-      // data: [1, 3, 1, 2],
+      // data: [1, 3, 1, 2], // I leave it just to remember where the "date" is
       backgroundColor: ['rgb(43, 177, 0, 1)', 'rgb(174,177, 0, 1)', 'rgb(255,165, 0, 1)', 'rgb(255,0, 0, 1)'],
       borderWidth: 1
     }]
@@ -162,10 +172,10 @@ const ctxBar = document.getElementById('transactionChartBar');
 const barChart = new Chart(ctxBar, {
   type: 'bar',
   data: {
-    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'], // I leave it just to remember where the "labels" is
     datasets: [{
       label: 'Saldo konta na koniec dnia',
-      // data: [12, 19, 3, 5, 2],
+      // data: [12, 19, 3, 5, 2], // I leave it just to remember where the "date" is
       borderWidth: 1,
 
     }]
