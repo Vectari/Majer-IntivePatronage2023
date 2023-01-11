@@ -93,20 +93,39 @@ function updateChart() {
     // Assign data to transaction history table
     let tableData = "";
     datapoints.transactions.map((datapoints) => { 
-  
-      // const myImage = new Image(50, 50);
-      // myImage.src = '../images/income-salar-icon.png';
-      // document.body.appendChild(myImage);
+      
+      // Check number of transaction type  and add right icon to transaction
+      if (datapoints.type == 1) {
+        icon = `<img src="../images/income-other-icon.png"></img>`;
+      } else if (datapoints.type == 2) {
+        icon = `<img src="../images/expenses-shopping-icon.png"></img>`;
+      } else if (datapoints.type == 3) {
+        icon = `<img src="../images/income-salar-icon.png"></img>`;
+      } else if (datapoints.type == 4) {
+        icon = `<img src="../images/expenses-other-icon.png"></img>`;
+      }
+
+      //Check number of transaction type and add right transaction type name
+      if (datapoints.type == 1) {
+        transactionName = 'Wpływy - inne';
+      } else if (datapoints.type == 2) {
+        transactionName = 'Wydatki - zakupy';
+      } else if (datapoints.type == 3) {
+        transactionName = 'Wpływy - wynagrodzenie';
+      } else if (datapoints.type == 4) {
+        transactionName = 'Wydatki - inne';
+      }
 
       tableData += `<tr>
                       <td class="hidden-on-mobile">${datapoints.date}</td>
-                      <td>${datapoints.type}</td>
-                      <td>${datapoints.description}<br>${datapoints.transacationTypes}</td>
+                      <td>${icon}</td>
+                      <td>${datapoints.description}<br>${transactionName}</td>
                       <td>${datapoints.amount}</td>
                       <td class="hidden-on-mobile">${datapoints.balance}</td>
                     </tr>`;
     });
     document.getElementById('table-body').innerHTML = tableData;
+
 
   });
 };
