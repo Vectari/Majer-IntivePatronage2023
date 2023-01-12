@@ -41,15 +41,16 @@ function updateChart() {
     const transactionTypesOutShop = datapoints.transacationTypes[2];
     const transactionTypesInPay = datapoints.transacationTypes[3];
     const transactionTypesOutOther = datapoints.transacationTypes[4];
-    console.log(date);
+    // console.log(date);
     // console.log(type);
     // console.log(description);
     // console.log(amount);
-    console.log(balance);
+    // console.log(balance);
     // console.log(transactionTypesInOther);
     // console.log(transactionTypesOutShop);
     // console.log(transactionTypesInPay);
     // console.log(transactionTypesOutOther);
+    // console.log(datapoints.transacationTypes);
 
 
     // Count transacion types to assign right % of pie chart
@@ -74,19 +75,27 @@ function updateChart() {
     // console.log(inPay);
     // console.log(outOther);
 
-    // Count balance for END of each day
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-  
-    arr = date.filter(function (value, index, array) { 
-      return array.indexOf(value) === index;
+    
+    // Balance for END of each day
+        // function to leave individual date
+    let day = date.filter(function (date, index, array) { 
+      return array.indexOf(date) === index;
     });
-  
-    console.log(arr);
+    // console.log(day);
+    
+        // assign balance to day
+    let eachDayBalance = [];
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
+    if (date[0] === day[0]) {
+      eachDayBalance.push(balance[0]);
+    }
+    if (date[3] === day[1]) {
+      eachDayBalance.push(balance[3]);
+    }
+    if (date[5] === day[2]) {
+      eachDayBalance.push(balance[5]);
+    }
+    console.log(eachDayBalance);
 
 
     // Assign labels and data to charts
@@ -95,8 +104,8 @@ function updateChart() {
     pieChart.update();
 
 
-    barChart.data.labels = arr.sort();
-    barChart.data.datasets[0].data = balance.reverse();
+    barChart.data.labels = day;
+    barChart.data.datasets[0].data = eachDayBalance;
     barChart.update();
 
 
