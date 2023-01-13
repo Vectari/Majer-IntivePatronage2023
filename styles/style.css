@@ -318,7 +318,7 @@ nav {
 }
 
 .chart-space {
-    width: 80px;
+    width: 100px;
 }
 
 /* Table */
@@ -338,6 +338,13 @@ th {
 td {
     border-top: 1px dotted #222222;
 }
+
+.clickable-row {
+    cursor: pointer;
+}
+
+
+
 
 th,
 td {

@@ -95,7 +95,7 @@ function updateChart() {
     if (date[5] === day[2]) {
       eachDayBalance.push(balance[5]);
     }
-    console.log(eachDayBalance);
+    // console.log(eachDayBalance);
 
 
     // Assign labels and data to charts
@@ -135,13 +135,28 @@ function updateChart() {
         transactionName = 'Wydatki - inne';
       }
 
-      tableData += `<tr>
+      let width = screen.width; //check screen width
+
+      if (screen.width > 768) { //table for width >768px (desktop)
+        tableData += `<tr>
                       <td class="hidden-on-mobile">${datapoints.date}</td>
                       <td>${icon}</td>
                       <td>${datapoints.description}<br>${transactionName}</td>
                       <td>${datapoints.amount}</td>
                       <td class="hidden-on-mobile">${datapoints.balance}</td>
                     </tr>`;
+      } else {  // table for width <768px (mobile version)
+        tableData += `<tr>
+                        <td class="hidden-on-mobile clickable-row"  onclick="test()">${datapoints.date}</td>
+                        <td  onclick="test()" class="clickable-row">${icon}</td>
+                        <td  onclick="test()" class="clickable-row">${datapoints.description}<br>${transactionName}</td>
+                        <td  onclick="test()" class="clickable-row">${datapoints.amount}</td>
+                        <td class="hidden-on-mobile clickable-row"  onclick="test()">${datapoints.balance}</td>
+                        <tr>
+                          <td colspan="3">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>
+                        </tr>
+                      </tr>`;
+      }
     });
     document.getElementById('table-body').innerHTML = tableData;
 
@@ -206,4 +221,10 @@ const barChart = new Chart(ctxBar, {
     }
   }
 });
+
+// Transactions history
+
+function test() {
+
+}
 
