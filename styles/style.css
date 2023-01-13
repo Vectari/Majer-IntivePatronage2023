@@ -317,10 +317,8 @@ nav {
     overflow-x: auto;
 }
 
-#transactionChartPie {
-}
-
-#transactionChartBar {
+.chart-space {
+    width: 80px;
 }
 
 /* Table */
@@ -329,6 +327,16 @@ nav {
     background-color: #222222cc;
     color:#FFFFFF;
     margin: auto;
+    border-radius: 15px;
+}
+
+th {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+td {
+    border-top: 1px dotted #222222;
 }
 
 th,
@@ -351,6 +359,5 @@ td {
     th,
     td {
     padding: 5px 10px 5px 10px;
-}
-    
+    }   
 }
