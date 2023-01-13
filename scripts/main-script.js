@@ -158,18 +158,25 @@ const ctxPie = document.getElementById('transactionChartPie');
 const pieChart = new Chart(ctxPie, {
   type: 'pie',
   data: {
-    labels: ['Wpływy - inne', 'Wydatki - zakupy', 'Wpływy - wynagrodzenie', 'Wydatki - inne'], //labels name is required to display label above char
+    // labels: ['Wpływy - inne', 'Wydatki - zakupy', 'Wpływy - wynagrodzenie', 'Wydatki - inne'], // I leave it just to remember where the "labels" is
     datasets: [{
       label: 'Ilość transakcji',
       // data: [1, 3, 1, 2], // I leave it just to remember where the "date" is
-      backgroundColor: ['rgb(43, 177, 0, 1)', 'rgb(174,177, 0, 1)', 'rgb(255,165, 0, 1)', 'rgb(255,0, 0, 1)'],
+      backgroundColor: ['rgb(51, 154, 240, 1)', 'rgb(250, 82, 82, 1)', 'rgb(51, 240, 113, 1)', 'rgb(255, 192, 131, 1)'],
+      // backgroundColor: [inOther, outShop, inPay, outOther] // order of colors
       borderWidth: 1
     }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+        ticks: {
+          display: false
+        },
+        // grid: {
+        //   display: false,
+        // }
       }
     }
   }
@@ -184,6 +191,7 @@ const barChart = new Chart(ctxBar, {
     // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'], // I leave it just to remember where the "labels" is
     datasets: [{
       label: 'Saldo konta na koniec dnia',
+      backgroundColor:'rgb(0, 204, 204, 0.7)',
       // data: [12, 19, 3, 5, 2], // I leave it just to remember where the "date" is
       borderWidth: 1,
 
