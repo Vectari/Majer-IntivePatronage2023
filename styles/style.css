@@ -323,11 +323,18 @@ nav {
 
 /* Table */
 
+#table-container {
+    height: 40vh;
+    overflow-y: scroll;
+
+}
+
 .table {
     background-color: #222222cc;
     color:#FFFFFF;
     margin: auto;
     border-radius: 15px;
+    overflow: scroll;
 }
 
 th {
