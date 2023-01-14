@@ -321,7 +321,7 @@ nav {
     width: 100px;
 }
 
-/* Table */
+/* Table - Transaction history */
 
 #table-container {
     height: 40vh;
@@ -334,7 +334,6 @@ nav {
     color:#FFFFFF;
     margin: auto;
     border-radius: 15px;
-    overflow: scroll;
 }
 
 th {
