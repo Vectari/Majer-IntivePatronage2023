@@ -147,16 +147,19 @@ function updateChart() {
                     </tr>`;
       } else {  // table for width <768px (mobile version)
         tableData += `<tr>
-                        <td class="hidden-on-mobile clickable-row"  onclick="test()">${datapoints.date}</td>
-                        <td  onclick="test()" class="clickable-row">${icon}</td>
-                        <td  onclick="test()" class="clickable-row">${datapoints.description}<br>${transactionName}</td>
-                        <td  onclick="test()" class="clickable-row">${datapoints.amount}</td>
-                        <td class="hidden-on-mobile clickable-row"  onclick="test()">${datapoints.balance}</td>
+                        <td class="hidden-on-mobile clickable-row"</td>   <!-- no onclick because is hidden on mobile -->
+                        <td  onclick="showHide${Math.floor(datapoints.balance)}()" class="clickable-row">${icon}</td>
+                        <td  onclick="showHide${Math.floor(datapoints.balance)}()" class="clickable-row">${datapoints.description}<br>${transactionName}</td>
+                        <td  onclick="showHide${Math.floor(datapoints.balance)}()" class="clickable-row">${datapoints.amount}</td>
+                        <td class="hidden-on-mobile clickable-row">${datapoints.balance}</td>    <!-- no onclick because is hidden on mobile -->
                         <tr>
-                          <td colspan="3">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>
+                          <td></td><td colspan="3" id="id${Math.floor(datapoints.balance)}" style="display: none">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>
                         </tr>
                       </tr>`;
       }
+
+      // ${Math.floor(datapoints.balance)} - create individual ID or func number base of Math.floor balance
+
     });
     document.getElementById('table-body').innerHTML = tableData;
 
@@ -224,7 +227,59 @@ const barChart = new Chart(ctxBar, {
 
 // Transactions history
 
-function test() {
-
+function showHide4337() {
+  let detail = document.getElementById("id4337");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
 }
-
+function showHide4572() {
+  let detail = document.getElementById("id4572");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
+}
+function showHide2420() {
+  let detail = document.getElementById("id2420");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
+}
+function showHide2555() {
+  let detail = document.getElementById("id2555");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
+}
+function showHide2847() {
+  let detail = document.getElementById("id2847");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
+}
+function showHide3000() {
+  let detail = document.getElementById("id3000");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
+}
+function showHide3027() {
+  let detail = document.getElementById("id3027");
+  if (detail.style.display === "none") {
+    detail.style.display = "block";
+  } else {
+    detail.style.display = "none";
+  }
+}

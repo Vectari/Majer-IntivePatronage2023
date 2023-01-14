@@ -336,11 +336,15 @@ th {
 }
 
 td {
-    border-top: 1px dotted #222222;
+    /* border-top: 1px dotted #222222; */
 }
 
 .clickable-row {
     cursor: pointer;
+}
+
+#id4337 {
+    display: "none";
 }
 
 
