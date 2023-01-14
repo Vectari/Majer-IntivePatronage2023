@@ -153,7 +153,7 @@ function updateChart() {
                         <td  onclick="showHide${Math.floor(datapoints.balance)}()" class="clickable-row">${datapoints.amount}</td>
                         <td class="hidden-on-mobile clickable-row">${datapoints.balance}</td>    <!-- no onclick because is hidden on mobile -->
                         <tr>
-                          <td></td><td colspan="3" id="id${Math.floor(datapoints.balance)}" style="display: none">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>
+                          <td></td><td colspan="3" id="id${Math.floor(datapoints.balance)}" style="display: none" class="detail-row">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>
                         </tr>
                       </tr>`;
       }
@@ -234,6 +234,20 @@ function showHide4337() {
   } else {
     detail.style.display = "none";
   }
+  // only one detail row can be open at the time
+  if (((document.getElementById("id4572")).style.display === "block") ||
+    ((document.getElementById("id2420")).style.display === "block") ||
+    ((document.getElementById("id2555")).style.display === "block") ||
+    ((document.getElementById("id2847")).style.display === "block") ||
+    ((document.getElementById("id3000")).style.display === "block") ||
+    (document.getElementById("id3027")).style.display === "block") {
+    (document.getElementById("id4572")).style.display = "none";
+    (document.getElementById("id2420")).style.display = "none";
+    (document.getElementById("id2555")).style.display = "none";
+    (document.getElementById("id2847")).style.display = "none";
+    (document.getElementById("id3000")).style.display = "none";
+    (document.getElementById("id3027")).style.display = "none";
+  }
 }
 function showHide4572() {
   let detail = document.getElementById("id4572");
@@ -241,6 +255,20 @@ function showHide4572() {
     detail.style.display = "block";
   } else {
     detail.style.display = "none";
+  }
+  // only one detail row can be open at the time  
+  if (((document.getElementById("id4337")).style.display === "block") ||
+    ((document.getElementById("id2420")).style.display === "block") ||
+    ((document.getElementById("id2555")).style.display === "block") ||
+    ((document.getElementById("id2847")).style.display === "block") ||
+    ((document.getElementById("id3000")).style.display === "block") ||
+    (document.getElementById("id3027")).style.display === "block") {
+    (document.getElementById("id4337")).style.display = "none";
+    (document.getElementById("id2420")).style.display = "none";
+    (document.getElementById("id2555")).style.display = "none";
+    (document.getElementById("id2847")).style.display = "none";
+    (document.getElementById("id3000")).style.display = "none";
+    (document.getElementById("id3027")).style.display = "none";
   }
 }
 function showHide2420() {
@@ -250,6 +278,20 @@ function showHide2420() {
   } else {
     detail.style.display = "none";
   }
+  // only one detail row can be open at the time
+  if (((document.getElementById("id4337")).style.display === "block") ||
+    ((document.getElementById("id4572")).style.display === "block") ||
+    ((document.getElementById("id2555")).style.display === "block") ||
+    ((document.getElementById("id2847")).style.display === "block") ||
+    ((document.getElementById("id3000")).style.display === "block") ||
+    (document.getElementById("id3027")).style.display === "block") {
+    (document.getElementById("id4337")).style.display = "none";
+    (document.getElementById("id4572")).style.display = "none";
+    (document.getElementById("id2555")).style.display = "none";
+    (document.getElementById("id2847")).style.display = "none";
+    (document.getElementById("id3000")).style.display = "none";
+    (document.getElementById("id3027")).style.display = "none";
+  }
 }
 function showHide2555() {
   let detail = document.getElementById("id2555");
@@ -257,6 +299,20 @@ function showHide2555() {
     detail.style.display = "block";
   } else {
     detail.style.display = "none";
+  }
+  // only one detail row can be open at the time     
+  if (((document.getElementById("id4337")).style.display === "block") ||
+    ((document.getElementById("id4572")).style.display === "block") ||
+    ((document.getElementById("id2420")).style.display === "block") ||
+    ((document.getElementById("id2847")).style.display === "block") ||
+    ((document.getElementById("id3000")).style.display === "block") ||
+    (document.getElementById("id3027")).style.display === "block") {
+    (document.getElementById("id4337")).style.display = "none";
+    (document.getElementById("id4572")).style.display = "none";
+    (document.getElementById("id2420")).style.display = "none";
+    (document.getElementById("id2847")).style.display = "none";
+    (document.getElementById("id3000")).style.display = "none";
+    (document.getElementById("id3027")).style.display = "none";
   }
 }
 function showHide2847() {
@@ -266,6 +322,20 @@ function showHide2847() {
   } else {
     detail.style.display = "none";
   }
+  // only one detail row can be open at the time     
+  if (((document.getElementById("id4337")).style.display === "block") ||
+    ((document.getElementById("id4572")).style.display === "block") ||
+    ((document.getElementById("id2420")).style.display === "block") ||
+    ((document.getElementById("id2555")).style.display === "block") ||
+    ((document.getElementById("id3000")).style.display === "block") ||
+    (document.getElementById("id3027")).style.display === "block") {
+    (document.getElementById("id4337")).style.display = "none";
+    (document.getElementById("id4572")).style.display = "none";
+    (document.getElementById("id2420")).style.display = "none";
+    (document.getElementById("id2555")).style.display = "none";
+    (document.getElementById("id3000")).style.display = "none";
+    (document.getElementById("id3027")).style.display = "none";
+  }
 }
 function showHide3000() {
   let detail = document.getElementById("id3000");
@@ -274,6 +344,20 @@ function showHide3000() {
   } else {
     detail.style.display = "none";
   }
+  // only one detail row can be open at the time      
+  if (((document.getElementById("id4337")).style.display === "block") ||
+    ((document.getElementById("id4572")).style.display === "block") ||
+    ((document.getElementById("id2420")).style.display === "block") ||
+    ((document.getElementById("id2555")).style.display === "block") ||
+    ((document.getElementById("id2847")).style.display === "block") ||
+    (document.getElementById("id3027")).style.display === "block") {
+    (document.getElementById("id4337")).style.display = "none";
+    (document.getElementById("id4572")).style.display = "none";
+    (document.getElementById("id2420")).style.display = "none";
+    (document.getElementById("id2555")).style.display = "none";
+    (document.getElementById("id2847")).style.display = "none";
+    (document.getElementById("id3027")).style.display = "none";
+  }
 }
 function showHide3027() {
   let detail = document.getElementById("id3027");
@@ -281,5 +365,19 @@ function showHide3027() {
     detail.style.display = "block";
   } else {
     detail.style.display = "none";
+  }
+  // only one detail row can be open at the time         
+  if (((document.getElementById("id4337")).style.display === "block") ||
+    ((document.getElementById("id4572")).style.display === "block") ||
+    ((document.getElementById("id2420")).style.display === "block") ||
+    ((document.getElementById("id2555")).style.display === "block") ||
+    ((document.getElementById("id2847")).style.display === "block") ||
+    (document.getElementById("id3000")).style.display === "block") {
+    (document.getElementById("id4337")).style.display = "none";
+    (document.getElementById("id4572")).style.display = "none";
+    (document.getElementById("id2420")).style.display = "none";
+    (document.getElementById("id2555")).style.display = "none";
+    (document.getElementById("id2847")).style.display = "none";
+    (document.getElementById("id3000")).style.display = "none";
   }
 }
