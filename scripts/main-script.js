@@ -156,24 +156,70 @@ function updateChart() {
 
       //Check number of transaction type and add right transaction type name
       if (datapoints.type == 1) {
-        transactionName = 'Wpływy - inne';
+        if ((sessionStorage.getItem('language')) === "1") {
+          transactionName = 'Income - other';
+        } else {
+          transactionName = 'Wpływy - inne';
+        }
       } else if (datapoints.type == 2) {
-        transactionName = 'Wydatki - zakupy';
+        if ((sessionStorage.getItem('language')) === "1") {
+          transactionName = 'Expenses - shopping';
+        } else {
+          transactionName = 'Wydatki - zakupy';
+        }
       } else if (datapoints.type == 3) {
-        transactionName = 'Wpływy - wynagrodzenie';
+        if ((sessionStorage.getItem('language')) === "1") {
+          transactionName = 'Income - salar';
+        } else {
+          transactionName = 'Wpływy - wynagrodzenie';
+        }
       } else if (datapoints.type == 4) {
-        transactionName = 'Wydatki - inne';
+        if ((sessionStorage.getItem('language')) === "1") {
+          transactionName = 'Expenses - other';
+        } else {
+          transactionName = 'Wydatki - inne';
+        }
       }
 
       let width = screen.width; //check screen width
 
+      //variable need to change laguage in table labels
+      let tableDateLabel = document.getElementById("table-date-label");
+      let tableIconLabel = document.getElementById("table-icon-label");
+      let tableDescriptionLabel = document.getElementById("table-description-label");
+      let tableAmountLabel = document.getElementById("table-amount-label");
+      let tableBalanceLabel = document.getElementById("table-balance-label");
+
+      //change language for table labels
+      if ((sessionStorage.getItem('language')) === "1") {
+        tableDateLabel.innerHTML = `DATE`;
+        tableIconLabel.innerHTML = `ICON`;
+        tableDescriptionLabel.innerHTML = `DESCRIPTION`;
+        tableAmountLabel.innerHTML = `AMOUNT`;
+        tableBalanceLabel.innerHTML = `BALANCE`;
+      } else {
+        tableDateLabel.innerHTML = `DATA`;
+        tableIconLabel.innerHTML = `IKONA`;
+        tableDescriptionLabel.innerHTML = `OPIS`;
+        tableAmountLabel.innerHTML = `KWOTA`;
+        tableBalanceLabel.innerHTML = `SALDO`;
+      }
+
+      // change labels language for extended row in mobile version
+      if ((sessionStorage.getItem('language')) === "1") {
+        extendedRow = `<td></td><td colspan="3" id="id${Math.floor(datapoints.balance)}" style="display: none" class="detail-row">DATE:<br>${datapoints.date}<br>BALANCE:<br>${datapoints.balance}</td>`;
+      } else {
+        extendedRow = `<td></td><td colspan="3" id="id${Math.floor(datapoints.balance)}" style="display: none" class="detail-row">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>`;
+      }
+
+
       if (screen.width > 768) { //table for width >768px (desktop)
         tableData += `<tr>
-                      <td class="hidden-on-mobile">${datapoints.date}</td>
+                      <td>${datapoints.date}</td>
                       <td>${icon}</td>
                       <td>${datapoints.description}<br>${transactionName}</td>
                       <td>${datapoints.amount}</td>
-                      <td class="hidden-on-mobile">${datapoints.balance}</td>
+                      <td>${datapoints.balance}</td>
                     </tr>`;
       } else {  // table for width <768px (mobile version)
         tableData += `<tr>
@@ -183,7 +229,7 @@ function updateChart() {
                         <td  onclick="showHide${Math.floor(datapoints.balance)}()" class="clickable-row">${datapoints.amount}</td>
                         <td class="hidden-on-mobile clickable-row">${datapoints.balance}</td>    <!-- no onclick because is hidden on mobile -->
                         <tr>
-                          <td></td><td colspan="3" id="id${Math.floor(datapoints.balance)}" style="display: none" class="detail-row">DATA: ${datapoints.date}<br>SALDO: ${datapoints.balance}</td>
+                          ${extendedRow}
                         </tr>
                       </tr>`;
       }
@@ -192,8 +238,6 @@ function updateChart() {
 
     });
     document.getElementById('table-body').innerHTML = tableData;
-
-
   });
 };
 
