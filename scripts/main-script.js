@@ -1,5 +1,27 @@
+// LANGUAGE CHANGE
+let logoutButtonTitle = document.getElementById("logout-btn");
+
+function languageENG(e) {
+    sessionStorage.setItem('language', '1');
+    window.location.reload();
+}
+
+function languagePL(e) {
+    sessionStorage.setItem('language', '0');
+    window.location.reload();
+}
+
+if ((sessionStorage.getItem('language')) === "1") { //change language for log out button
+  logoutButtonTitle.innerHTML = `Log out`;
+}
+
 // Display username near "LOGOUT" button on the right side of navbar
-document.getElementById('username-welcome').textContent += `Witaj, ${sessionStorage.getItem('username')}!`;
+if ((sessionStorage.getItem('language')) === "1") {
+  document.getElementById('username-welcome').textContent += `Hello, ${sessionStorage.getItem('username')}!`; //change language for greeting
+} else {
+  document.getElementById('username-welcome').textContent += `Witaj, ${sessionStorage.getItem('username')}!`; //change language for greeting
+}
+
 
 // Fetch API from URL
 function updateChart() {
@@ -37,6 +59,8 @@ function updateChart() {
       return index.balance;
       }
     )
+
+    
     const transactionTypesInOther = datapoints.transacationTypes[1];
     const transactionTypesOutShop = datapoints.transacationTypes[2];
     const transactionTypesInPay = datapoints.transacationTypes[3];
@@ -99,6 +123,12 @@ function updateChart() {
 
 
     // Assign labels and data to charts
+    if ((sessionStorage.getItem('language')) === "1") { //change language for labels in pie chart
+      [datapoints.transacationTypes[1], datapoints.transacationTypes[2], datapoints.transacationTypes[3], datapoints.transacationTypes[4]] = [`Income - other`, `Expenses - shopping`, `Income - salar`, `Expenses - other`];
+    } else {
+      [datapoints.transacationTypes[1], datapoints.transacationTypes[2], datapoints.transacationTypes[3], datapoints.transacationTypes[4]] = [datapoints.transacationTypes[1], datapoints.transacationTypes[2], datapoints.transacationTypes[3], datapoints.transacationTypes[4]];
+    }
+
     pieChart.data.labels = [datapoints.transacationTypes[1], datapoints.transacationTypes[2], datapoints.transacationTypes[3], datapoints.transacationTypes[4]];
     pieChart.data.datasets[0].data = [inOther, outShop, inPay, outOther];
     pieChart.update();
@@ -172,13 +202,19 @@ function updateChart() {
 
 // Pie chart
 const ctxPie = document.getElementById('transactionChartPie');
+
+if ((sessionStorage.getItem('language')) === "1") { //change language for hover on pie char
+  amountOfTheTransaction = `Amount of the transaction`;
+} else {
+  amountOfTheTransaction = `Ilość transakcji`;
+}
       
 const pieChart = new Chart(ctxPie, {
   type: 'pie',
   data: {
     // labels: ['Wpływy - inne', 'Wydatki - zakupy', 'Wpływy - wynagrodzenie', 'Wydatki - inne'], // I leave it just to remember where the "labels" is
     datasets: [{
-      label: 'Ilość transakcji',
+      label: `${amountOfTheTransaction}`,
       // data: [1, 3, 1, 2], // I leave it just to remember where the "date" is
       backgroundColor: ['rgb(51, 154, 240, 1)', 'rgb(250, 82, 82, 1)', 'rgb(51, 240, 113, 1)', 'rgb(255, 192, 131, 1)'],
       // backgroundColor: [inOther, outShop, inPay, outOther] // order of colors
@@ -202,13 +238,19 @@ const pieChart = new Chart(ctxPie, {
 
 // Bar chart
 const ctxBar = document.getElementById('transactionChartBar');
+
+if ((sessionStorage.getItem('language')) === "1") { //change language for label in bar chart
+  barChartLabel = `Account balance at the end of the day`;
+} else {
+  barChartLabel = `Saldo konta na koniec dnia`;
+}
       
 const barChart = new Chart(ctxBar, {
   type: 'bar',
   data: {
     // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'], // I leave it just to remember where the "labels" is
     datasets: [{
-      label: 'Saldo konta na koniec dnia',
+      label: `${barChartLabel}`,
       backgroundColor:'rgb(0, 204, 204, 0.7)',
       // data: [12, 19, 3, 5, 2], // I leave it just to remember where the "date" is
       borderWidth: 1,
