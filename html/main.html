@@ -9,9 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body onload="updateChart()">
-    <nav style="justify-content: flex-end;">
-        <div id="username-welcome"></div>
-        <a class="logout-btn" href="./login.html">Wyloguj</a>
+    <nav>
+    <!-- <nav style="justify-content: flex-end;"> -->
+        <div id="language-section">
+            <a onclick="languagePL(event)"><img src="../images/PL_icon.png" class="language-icon" alt="polish language icon"></a>
+            <a onclick="languageENG(event)"><img src="../images/ENG_icon.png" class="language-icon" alt="english language icon"></a>
+        </div>
+        <div>
+            <a class="logout-btn" href="./login.html">Wyloguj</a>
+            <div id="username-welcome"></div>
+        </div>
     </nav>
     <div id="chart-container">
         <div>

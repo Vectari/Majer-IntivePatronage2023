@@ -1,5 +1,5 @@
 // Display username near "LOGOUT" button on the right side of navbar
-document.getElementById('username-welcome').textContent += `Dzień dobry, ${sessionStorage.getItem('username')}!`;
+document.getElementById('username-welcome').textContent += `Witaj, ${sessionStorage.getItem('username')}!`;
 
 // Fetch API from URL
 function updateChart() {

@@ -62,7 +62,16 @@ nav {
 }
 
 #language-section{
-    justify-items: right;
+    /* justify-items: right; */
+}
+
+#language-section-main{
+
+}
+
+#username-welcome,
+.logout-btn {
+    float: right;
 }
 
 .language-icon {
