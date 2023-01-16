@@ -38,7 +38,7 @@ function validate(e){
 
     let emailCheck = (userNameOrEmail.value).split('').find(element => element === '@');  // check if input is email - essential to propose registration if email not exist
 
-    let loginStatus = document.getElementById("login-status");
+    let loginStatus = document.getElementById("login-status");    //variable for errors(status)
 
     if (((x) || (y)) && (z)) {
         window.location.href = "main.html";
@@ -56,22 +56,22 @@ function validate(e){
     } else if (((!x) && (!y)) && (!z)) {
         if ((sessionStorage.getItem('language')) === "1") {
             loginStatus.innerHTML = `<div class="login-status-not-ok">Wrong username and password.</div>`;   //change language for non-static element
-            document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any erraor with this input
-            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any error with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
         } else {
             loginStatus.innerHTML = `<div class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
-            document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any erraor with this input
-            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any error with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
         }
     } else if (((x) || (y)) && (!z)) {
         if ((sessionStorage.getItem('language')) === "1") {
             loginStatus.innerHTML = `<div class="login-status-not-ok">Wrong password.</div>`;   //change language for non-static element
             document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
-            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
         } else {
             loginStatus.innerHTML = `<div class="login-status-not-ok">Złe hasło.</div>`;
             document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
-            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
         }
     } else {
         if ((sessionStorage.getItem('language')) === "1") {

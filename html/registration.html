@@ -17,20 +17,20 @@
         </div>
     </nav>
     <div id="reg-container">
-        <form id="reg-form" action="./main.html">
+        <form id="reg-form" action="./main.html" onsubmit="validate(event)">
             <h2 id="title-reg">Rejestracja</h2>
-            <div id="reg-status">REG STATUS</div>
+            <div id="reg-status"></div>
             <div class="reg-label-input-div">
                 <label for="username" class="reg-label" id="username-title">Nazwa użytkownika</label>
-                <input type="text" name="username" class="reg-input" id="username" minlength="6" maxlength="16" pattern="[a-zA-Z0-9-]+" required>
+                <input type="text" name="username" class="reg-input" id="username" required>
             </div>
             <div class="reg-label-input-div">
                 <label for="password" class="reg-label" id="password-title">Hasło</label>
-                <input type="password" name="password" class="reg-input" id="password" minlength="6" required>
+                <input type="password" name="password" class="reg-input" id="password" required>
             </div>
             <div class="reg-label-input-div">
                 <label for="email" class="reg-label" id="email-title">Email</label>
-                <input type="email" name="email" class="reg-input" id="email" pattern=".+@gmail.com" required>
+                <input type="email" name="email" class="reg-input" id="email" required>
             </div>
             <div class="reg-label-input-div">
                 <label for="confirm-email" class="reg-label" id="confirm-email-title">Potwierdź email</label>
