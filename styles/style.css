@@ -61,14 +61,6 @@ nav {
     box-shadow: 1px 1px 10px #FF6200;
 }
 
-#language-section{
-    /* justify-items: right; */
-}
-
-#language-section-main{
-
-}
-
 #username-welcome,
 .logout-btn {
     float: right;
@@ -154,8 +146,10 @@ nav {
 }
 
 .login-status-not-ok {
-    color: #FF0000;
+    color: #ff0000;
+    background-color: #222222a1;
     font-weight: bold;
+    font-size: 16px;
 }
 
 .free-mail {
@@ -181,10 +175,6 @@ nav {
 
 .login-label {
     display: block;
-}
-
-.login-input {
-
 }
 
 @media only screen and (min-width: 675px){
@@ -250,8 +240,10 @@ nav {
 }
 
 .reg-status-not-ok {
-    color: #FF0000;
+    color: #ff0000;
+    background-color: #222222a1;
     font-weight: bold;
+    font-size: 16px;
 }
 
 

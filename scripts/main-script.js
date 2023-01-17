@@ -17,9 +17,9 @@ if ((sessionStorage.getItem('language')) === "1") { //change language for log ou
 
 // Display username near "LOGOUT" button on the right side of navbar
 if ((sessionStorage.getItem('language')) === "1") {
-  document.getElementById('username-welcome').textContent += `Hello, ${sessionStorage.getItem('username')}!`; //change language for greeting
+  document.getElementById('username-welcome').textContent += `Hello, ${sessionStorage.getItem('username')}`; //change language for greeting
 } else {
-  document.getElementById('username-welcome').textContent += `Witaj, ${sessionStorage.getItem('username')}!`; //change language for greeting
+  document.getElementById('username-welcome').textContent += `Witaj, ${sessionStorage.getItem('username')}`; //change language for greeting
 }
 
 
