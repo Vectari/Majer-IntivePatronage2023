@@ -36,9 +36,16 @@ function validate(e){
     let y = userNameOrEmail.value === sessionStorage.getItem('email');   //shorter form of checking user input exists in sessionstorage
     let z = password.value === sessionStorage.getItem('password');   //shorter form of checking user input exists in sessionstorage
 
-    let emailCheck = (userNameOrEmail.value).split('').find(element => element === '@');  // check if input is email - essential to propose registration if email not exist
+    // let emailCheck = (userNameOrEmail.value).split('').find(element => element === '@');  // check if input is email - essential to propose registration if email not exist
 
-    let loginStatus = document.getElementById("login-status");    //variable for errors(status)
+     //pattern for email
+     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let emailCheck = userNameOrEmail.value.match(mailFormat);
+
+    //variable for errors(status)
+    let loginStatus = document.getElementById("login-status");
+    let loginStatusUsernameOrEmail = document.getElementById("login-status-usernameoremail");
+    let loginStatusPassword = document.getElementById("login-status-password");
 
     if (((x) || (y)) && (z)) {
         window.location.href = "main.html";
@@ -47,42 +54,74 @@ function validate(e){
         } else {
             loginStatus.innerHTML = `<div class="login-status-ok">Logowanie...</div>`;
         }
-    } else if (((!y) && (emailCheck === '@')) && ((z) || (!z))) {
+    } else if (((!y) && (emailCheck)) && ((z) || (!z))) {
         if ((sessionStorage.getItem('language')) === "1") {
             loginStatus.innerHTML = `<div class="login-status-ok">Email address available, <a href="./registration.html" class="free-mail"><br>REGISTER!</a></div>`;   //change language for non-static element
+            document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+            loginStatusUsernameOrEmail.innerHTML = ``;
+            document.getElementById("password").style.border = ""; //clear style for password input when first hav error here but now is ok
+            loginStatusPassword.innerHTML = ``;
         } else {
             loginStatus.innerHTML = `<div class="login-status-ok">Adres Email wolny, <a href="./registration.html" class="free-mail"><br>ZAREJESTRUJ SIĘ!</a></div>`;
+            document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+            loginStatusUsernameOrEmail.innerHTML = ``;
+            document.getElementById("password").style.border = ""; //clear style for password input when first hav error here but now is ok
+            loginStatusPassword.innerHTML = ``;
         }
     } else if (((!x) && (!y)) && (!z)) {
         if ((sessionStorage.getItem('language')) === "1") {
-            loginStatus.innerHTML = `<div class="login-status-not-ok">Wrong username and password.</div>`;   //change language for non-static element
+            loginStatusUsernameOrEmail.innerHTML = `<div class="login-status-not-ok">Wrong username or Email.</div>`; 
+            loginStatusPassword.innerHTML = `<div class="login-status-not-ok">Wrong password.</div>`;   //change language for non-static element
             document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any error with this input
             document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
+            loginStatus.innerHTML = ``; // clear login status above inputs
         } else {
-            loginStatus.innerHTML = `<div class="login-status-not-ok">Zła nazwa użytkownika i hasło.</div>`;
+            loginStatusUsernameOrEmail.innerHTML = `<div class="login-status-not-ok">Zła nazwa użytkownika lub Email.</div>`;
+            loginStatusPassword.innerHTML = `<div class="login-status-not-ok">Złe hasło.</div>`;
             document.getElementById("usernameoremail").style.border = "2px solid #FF0000"; //add red border input if any error with this input
             document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
+            loginStatus.innerHTML = ``; // clear login status above inputs
         }
     } else if (((x) || (y)) && (!z)) {
         if ((sessionStorage.getItem('language')) === "1") {
-            loginStatus.innerHTML = `<div class="login-status-not-ok">Wrong password.</div>`;   //change language for non-static element
+            loginStatusPassword.innerHTML = `<div class="login-status-not-ok">Wrong password.</div>`;   //change language for non-static element
             document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+            loginStatusUsernameOrEmail.innerHTML = ``;
             document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
+            loginStatus.innerHTML = ``; // clear login status above inputs
         } else {
-            loginStatus.innerHTML = `<div class="login-status-not-ok">Złe hasło.</div>`;
+            loginStatusPassword.innerHTML = `<div class="login-status-not-ok">Złe hasło.</div>`;
             document.getElementById("usernameoremail").style.border = ""; //clear style for username or email input when first hav error here but now is ok
+            loginStatusUsernameOrEmail.innerHTML = ``;
             document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any error with this input
+            loginStatus.innerHTML = ``; // clear login status above inputs
+        }
+    } else if (((!x) || (!y)) && (z)) {
+        if ((sessionStorage.getItem('language')) === "1") {
+            loginStatusUsernameOrEmail.innerHTML = `<div class="login-status-not-ok">Wrong username or Email.</div>`;   //change language for non-static element
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any error with this input 
+            document.getElementById("password").style.border = ""; //clear style for password input when first hav error here but now is ok
+            loginStatusPassword.innerHTML = ``;
+            loginStatus.innerHTML = ``; // clear login status above inputs
+        } else {
+            loginStatusUsernameOrEmail.innerHTML = `<div class="login-status-not-ok">Zła nazwa użytkownika lub Email.</div>`;   //change language for non-static element
+            document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any error with this input
+            document.getElementById("password").style.border = "";   //clear style for password input when first hav error here but now is ok
+            loginStatusPassword.innerHTML = ``; 
+            loginStatus.innerHTML = ``; // clear login status above inputs
         }
     } else {
         if ((sessionStorage.getItem('language')) === "1") {
             loginStatus.innerHTML = `<div class="login-status-not-ok">Login error. Enter other details.</div>`;   //change language for non-static element
             document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
             document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            loginStatus.innerHTML = ``; // clear login status above inputs
             console.log("error");
         } else {
             loginStatus.innerHTML = `<div class="login-status-not-ok">Błąd logowania. Wprowadź inne dane.</div>`;
             document.getElementById("usernameoremail").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
             document.getElementById("password").style.border = "2px solid #FF0000";  //add red border input if any erraor with this input
+            loginStatus.innerHTML = ``; // clear login status above inputs
             console.log("error");
         }
     }

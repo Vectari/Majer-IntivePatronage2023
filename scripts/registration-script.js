@@ -52,7 +52,7 @@ regBtn.addEventListener('click', (e) => {
 
     //Registration status(errors)
     if ((username.value.length >= 6) && (username.value.length <= 16) && (username.value.match(usernameFormat)) && (password.value.length >= 6) && (email.value === confirmEmail.value) && (email.value.match(mailFormat))) {
-        // window.location.href = "main.html";
+        window.location.href = "main.html";
         if ((sessionStorage.getItem('language')) === "1") {
             regStatus.innerHTML = `<div class="reg-status-ok">Account created! Logging In...</div>`;
             sessionStorage.setItem('username', username.value);
