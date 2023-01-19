@@ -1,13 +1,14 @@
 // LANGUAGE CHANGE
 let logoutButtonTitle = document.getElementById("logout-btn");
 
+
 function languageENG(e) {
-    sessionStorage.setItem('language', '1');
+    sessionStorage.setItem('language', '1');  // add value when user change language
     window.location.reload();
 }
 
 function languagePL(e) {
-    sessionStorage.setItem('language', '0');
+    sessionStorage.setItem('language', '0');  // add value when user change language
     window.location.reload();
 }
 
@@ -101,13 +102,13 @@ function updateChart() {
 
     
     // Balance for END of each day
-        // function to leave individual date
+      // function to leave individual date
     let day = date.filter(function (date, index, array) { 
       return array.indexOf(date) === index;
     });
     // console.log(day);
     
-        // assign balance to day
+      // assign balance to day
     let eachDayBalance = [];
 
     if (date[0] === day[0]) {
@@ -154,7 +155,7 @@ function updateChart() {
         icon = `<img src="../images/expenses-other-icon.png"></img>`;
       }
 
-      //Check number of transaction type and add right transaction type name
+      //Check number of transaction type and add right transaction type name ENG or PL
       if (datapoints.type == 1) {
         if ((sessionStorage.getItem('language')) === "1") {
           transactionName = 'Income - other';
@@ -234,7 +235,7 @@ function updateChart() {
                       </tr>`;
       }
 
-      // ${Math.floor(datapoints.balance)} - create individual ID or func number base of Math.floor balance
+                      // ${Math.floor(datapoints.balance)} - create individual ID or func number base of Math.floor balance
 
     });
     document.getElementById('table-body').innerHTML = tableData;
@@ -273,10 +274,7 @@ const pieChart = new Chart(ctxPie, {
         beginAtZero: true,
         ticks: {
           display: false
-        },
-        // grid: {
-        //   display: false,
-        // }
+        }
       }
     }
   }
