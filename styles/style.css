@@ -5,7 +5,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 110vh;
+    height: 100vh;
     font-family: 'Open Sans', sans-serif;
     max-width: 1300px;
     margin: auto;
@@ -28,7 +28,7 @@ nav {
 .login-btn {
     background-color: #FF6200;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: bold; 
     padding: 6px;
     margin-right: 10px;
     border-radius: 15px;
@@ -314,8 +314,28 @@ nav {
 /* Charts */
 #chart-container {
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
+}
+
+canvas {
+    height:50vh !important; 
+    width:100% !important;
+}
+
+@media only screen and (max-width: 768px){
+    #transactionChartPie {
+        width: 100vw !important;
+    }
+
+    #transactionChartBar {
+        width: 100vw !important;
+    }
+}
+
+@media only screen and (min-width: 769px){
+    #chart-container {
+        justify-content: center;
+    }
 }
 
 .chart-space {
@@ -359,18 +379,9 @@ td {
     display: "none";
 }
 
-
-
-
 th,
 td {
     padding: 5px 30px 5px 30px;
-}
-
-@media only screen and (min-width: 640px){
-    #chart-container {
-        justify-content: center;
-    }
 }
 
 @media only screen and (max-width: 768px){

@@ -266,6 +266,8 @@ const pieChart = new Chart(ctxPie, {
     }]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
@@ -302,6 +304,8 @@ const barChart = new Chart(ctxBar, {
     }]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
