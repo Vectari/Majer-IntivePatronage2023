@@ -5,7 +5,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    height: calc(100vh + 56px);
     font-family: 'Open Sans', sans-serif;
     max-width: 1300px;
     margin: auto;
@@ -103,8 +103,8 @@ nav {
 }
 
 .info-span:hover {
-    background-color:#000066;
-    box-shadow: 1px 1px 10px #000066;
+    background-color:#ff6200de;
+    box-shadow: 1px 1px 10px #ff6200de;
 }
 
 @media only screen and (min-width: 768px){
@@ -147,7 +147,8 @@ nav {
 
 .login-status-not-ok {
     color: #ff0000;
-    background-color: #222222a1;
+    background-color: #2222228e;
+    padding: 0 10px;
     font-weight: bold;
     font-size: 16px;
 }
@@ -231,7 +232,7 @@ nav {
     text-align: center;
     margin-bottom: 15px;
     font-size: 27px;
-    background-color: #22222225;
+    background-color: #2222228e;
 }
 
 .reg-status-ok {
@@ -241,7 +242,8 @@ nav {
 
 .reg-status-not-ok {
     color: #ff0000;
-    background-color: #222222a1;
+    background-color: #2222228e;
+    padding: 0 10px;
     font-weight: bold;
     font-size: 16px;
 }
@@ -265,10 +267,6 @@ nav {
 
 .reg-label {
     display: block;
-}
-
-.reg-input {
-    
 }
 
 @media only screen and (min-width: 570px){
@@ -360,10 +358,6 @@ canvas {
 th {
     font-size: 18px;
     font-weight: bold;
-}
-
-td {
-    /* border-top: 1px dotted #222222; */
 }
 
 .clickable-row {
